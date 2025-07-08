@@ -16,7 +16,7 @@ riscv-soc-learning/
 │   └── 05_debug_and_test.md     # 模擬除錯與波形分析技巧
 │
 ├── weekly/                      # 📅 每週進度追蹤與心得回顧
-│   └── week01_2025-07-04.md     # 第一週進度紀錄（已建立）
+│   └── week01_2025-07-04.md     # 第一週進度紀錄
 │
 ├── notes/                       # 🗒️ 每日學習記錄、錯誤分析、debug log
 │   └──（目前尚未建立具體筆記，可自行新增）
@@ -26,7 +26,7 @@ riscv-soc-learning/
 │   └── links.md                 # 有用連結整理
 │
 ├── src/                         # 💾 RTL 原始碼區
-│   ├── picorv32/                # 官方上游 clone 或 fork 的 PicoRV32 原始碼（如 picorv32.v）
+│   ├── picorv32/                # 官方 clone 或 fork 的 PicoRV32 原始碼（如 picorv32.v）
 │   ├── ip/                      # 自製 IP 模組（如 LED controller, UART 等）
 │   └── top/                     # 最上層整合（包含記憶體 map 與連線）
 │
