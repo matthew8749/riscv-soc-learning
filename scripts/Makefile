@@ -1,7 +1,8 @@
 INSTALL_DIR   := /RISCV-TOOLS
-WORK_DIR      := $(HOME)/riscv-build
+MY_HOME       := /home/yeda
+WORK_DIR      := $(MY_HOME)/riscv-build
 LOG_DIR       := $(WORK_DIR)/logs
-BASHRC        := $(HOME)/.bashrc
+BASHRC        := $(MY_HOME)/.bashrc
 SYMLINK_DIR   := /usr/local/bin
 NUM_JOBS      := 12
 PATH_LINE     := export PATH="$(INSTALL_DIR)/rv64/bin:$(INSTALL_DIR)/rv64-linux/bin:$(INSTALL_DIR)/qemu/bin:$$PATH"
@@ -32,7 +33,7 @@ all: install
 
 ## 安裝所有工具鏈與 QEMU
 install: install_toolchains install_qemu symlinks write_path
-	@echo "✅ 所有元件安裝完成"
+	@echo "所有元件安裝完成"
 
 install_toolchains:
 	mkdir -p $(INSTALL_DIR) $(WORK_DIR) $(LOG_DIR)
@@ -51,7 +52,7 @@ install_qemu:
 	cd $(WORK_DIR)/qemu-riscv && make install > $(LOG_DIR)/qemu_install.log 2>&1
 
 symlinks:
-	@echo "🔗 建立 symlinks"
+	@echo "建立 symlinks"
 	@for bin in riscv64-unknown-elf-gcc riscv64-unknown-elf-objcopy riscv64-linux-gnu-gcc qemu-riscv64; do \
 		sudo rm -f $(SYMLINK_DIR)/$$bin; \
 		if [ -f $(INSTALL_DIR)/rv64/bin/$$bin ]; then sudo ln -s $(INSTALL_DIR)/rv64/bin/$$bin $(SYMLINK_DIR)/$$bin; fi; \
@@ -60,27 +61,27 @@ symlinks:
 	done
 
 write_path:
-	@echo "📎 寫入 PATH 到 $(BASHRC)"
+	@echo "寫入 PATH 到 $(BASHRC)"
 	@grep -qxF '$(PATH_LINE)' $(BASHRC) || echo '$(PATH_LINE)' >> $(BASHRC)
 
 check:
-	@echo "🔍 檢查已安裝工具版本"
+	@echo "檢查已安裝工具版本"
 	@which riscv64-unknown-elf-gcc && riscv64-unknown-elf-gcc -v
 	@which riscv64-linux-gnu-gcc && riscv64-linux-gnu-gcc -v
 	@which qemu-riscv64 && qemu-riscv64 --version
 
 clean:
-	@echo "🧹 清除暫存與原始碼"
+	@echo "清除暫存與原始碼"
 	rm -rf $(WORK_DIR)/riscv-gnu-toolchain-rv64
 	rm -rf $(WORK_DIR)/riscv-gnu-toolchain-rv64-linux
 	rm -rf $(WORK_DIR)/qemu-riscv
 	# rm -rf $(LOG_DIR)  # 可選：也刪除 logs
 
 uninstall:
-	@echo "🧨 移除安裝內容"
+	@echo "移除安裝內容"
 	sudo rm -rf $(INSTALL_DIR)
 	@for bin in riscv64-unknown-elf-gcc riscv64-unknown-elf-objcopy riscv64-linux-gnu-gcc qemu-riscv64; do \
 	sudo rm -f $(SYMLINK_DIR)/$$bin; \
 	done
-	@echo "🧽 移除 PATH 設定（若存在）"
+	@echo "移除 PATH 設定（若存在）"
 	sed -i "\|$(PATH_LINE)|d" $(BASHRC)
