@@ -1,0 +1,21 @@
+{
+	"folders":
+	[
+		{
+			"path": "./",
+			"name": "0-Learning root",
+		},
+		{
+			"path": "./docs",
+			"name": "1-docs",
+		},
+		{
+			"path": "./scripts",
+			"name": "2-scripts",
+		},
+		{
+			"path": "./src/YosysHQ---picorv32/",
+			"name": "3-YosysHQ---picorv32",
+		}
+	],
+}
