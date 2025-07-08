@@ -12,11 +12,12 @@ set -e
 # qemu-riscv64 ./hello
 
 
-INSTALL_DIR=/RISVC-TOOLS
+INSTALL_DIR=/RISCV-TOOLS
 NUM_JOBS=12
-WORK_DIR=$HOME/riscv-build
+MY_HOME=/home/yeda
+WORK_DIR=$MY_HOME/riscv-build
 LOG_DIR=$WORK_DIR/logs
-BASHRC=$HOME/.bashrc
+BASHRC=$MY_HOME/.bashrc
 SYMLINK_DIR=/usr/local/bin
 
 echo "🔧 安裝路徑：$INSTALL_DIR"
@@ -49,7 +50,7 @@ build_toolchain() {
   TARGET=$6
 
   echo "🛠️  建構 $NAME 工具鏈..."
-  git clone --recursive https://github.com/riscv/riscv-gnu-toolchain riscv-gnu-toolchain-$NAME | tee $LOG_DIR/${NAME}_clone.log
+  git clone https://github.com/riscv/riscv-gnu-toolchain riscv-gnu-toolchain-$NAME | tee $LOG_DIR/${NAME}_clone.log
   cd riscv-gnu-toolchain-$NAME
   ./configure --prefix=$PREFIX --with-arch=$ARCH --with-abi=$ABI $EXTRA_CONFIG 2>&1 | tee $LOG_DIR/${NAME}_configure.log
   make $TARGET -j$NUM_JOBS 2>&1 | tee $LOG_DIR/${NAME}_build.log

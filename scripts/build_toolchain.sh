@@ -9,6 +9,8 @@ sudo apt update
 sudo apt install -y autoconf automake autotools-dev curl libmpc-dev libmpfr-dev libgmp-dev \
     gawk build-essential bison flex texinfo gperf libtool patchutils bc zlib1g-dev \
     libexpat-dev git python3
+sudo apt-get install autoconf automake autotools-dev curl python3 libmpc-dev libmpfr-dev libgmp-dev \
+     gawk build-essential bison flex texinfo gperf libtool patchutils bc zlib1g-dev libexpat-dev ninja-build
 
 # === 建立工作資料夾 ===
 mkdir -p $HOME/riscv-toolchain-build
