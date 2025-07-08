@@ -1,21 +1,71 @@
 {
-	"folders":
-	[
-		{
-			"path": "./",
-			"name": "0-Learning root",
-		},
-		{
-			"path": "./docs",
-			"name": "1-docs",
-		},
-		{
-			"path": "./scripts",
-			"name": "2-scripts",
-		},
-		{
-			"path": "./src/YosysHQ---picorv32/",
-			"name": "3-YosysHQ---picorv32",
-		}
-	],
+  "folders":
+  [
+    {
+      "name": "0-Learning root",
+      "path": "./",
+      "file_exclude_patterns":
+      [
+        //"*.rc",
+        "*.pdf",
+        //"*.bmp",
+        "*.exe",
+        "*.tdc",
+        "*.cbp",
+        "*.dbg",
+        "*.layout",
+        "*.dev",
+        "*.ppm",
+        //"*.tar",
+        //"*.tgz",
+        ".dir-locals.el",
+        ".travis.yml",
+        "LICENSE",
+        //".gitignore",
+        //".gitlab-ci.yml",
+        ".gitattributes",
+        "CONTRIBUTING.md"
+        //"README.md"
+      ],
+      "folder_exclude_patterns":
+      [
+        //"csrc",
+        //".github"
+        //"AN.DB",
+        //"work.verdi.lib++"
+      ],
+    },
+    {
+      "name": "1-docs",
+      "path": "./docs",
+    },
+    {
+      "name": "2-scripts",
+      "path": "./scripts",
+    },
+    {
+      "name": "3-YosysHQ---picorv32",
+      "path": "./src/YosysHQ---picorv32/",
+    }
+  ],
+  "settings":
+    {
+        "detect_indentation": false,
+        "font_size":11,
+        "tab_size": 2,
+        "translate_tabs_to_spaces": true,
+        //"trim_trailing_white_space_on_save": true,
+        "word_wrap": false,
+    },
+  "build_systems":
+  [
+        {
+            "file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
+            "name": "Anaconda Python Builder",
+            "selector": "source.python",
+            "shell_cmd": "\"python\" -u \"$file\""
+        }
+    ],
 }
+
+
