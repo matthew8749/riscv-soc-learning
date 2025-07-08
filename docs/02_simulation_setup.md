@@ -1,4 +1,6 @@
 # 02 simulation setup
+# 02. 模擬環境建置與工具鏈設定
+
 
 從[官網](https://github.com/riscv-collab/riscv-gnu-toolchain)安裝toolchain
 
@@ -41,3 +43,11 @@ sudo make -j12
 
 ```
 
+
+
+## 1. 基本模擬架構
+
+```text
+[ testbench.v ] → [ picorv32.v ] → [ firmware.elf / .hex ]
+       ↓ trace                ↓ waveform
+   showtrace.py           gtkwave
