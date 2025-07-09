@@ -2,18 +2,19 @@
 
 本專案記錄從 PicoRV32 出發，學習 RISC-V SoC 架構與 AXI/AHB 總線介面的歷程與筆記。
 
-# 📂 riscv-soc-learning 專案結構
-riscv-soc-learning/
-├── README.md                    # ✅ 專案簡介與目標說明
-├── progress.md                  # ✅ 階段式學習進度追蹤表（checklist + 練習）
+# 📂 riscv-soc-learning 專案結構  
+```
+riscv-soc-learning/  
+├── README.md                    # ✅ 專案簡介與目標說明  
+├── progress.md                  # ✅ 階段式學習進度追蹤表（checklist + 練習）  
 │
-├── docs/                        # 📘 系統化整理的學習筆記
-│   ├── 00_overview.md           # SoC 學習背景與整體架構
-│   ├── 01_picorv32_notes.md     # PicoRV32 架構分析
-│   ├── 02_simulation_setup.md   # 模擬環境建置與工具鏈設定
-│   ├── 03_bus_concepts.md       # AXI / AHB / APB 總線觀念整理
-│   ├── 04_custom_ip.md          # 如何加入自訂 IP（LED, GPIO 等）
-│   └── 05_debug_and_test.md     # 模擬除錯與波形分析技巧
+├── docs/                        # 📘 系統化整理的學習筆記  
+│   ├── 00_overview.md           # SoC 學習背景與整體架構  
+│   ├── 01_picorv32_notes.md     # PicoRV32 架構分析  
+│   ├── 02_simulation_setup.md   # 模擬環境建置與工具鏈設定  
+│   ├── 03_bus_concepts.md       # AXI / AHB / APB 總線觀念整理  
+│   ├── 04_custom_ip.md          # 如何加入自訂 IP（LED, GPIO 等）  
+│   └── 05_debug_and_test.md     # 模擬除錯與波形分析技巧  
 │
 ├── weekly/                      # 📅 每週進度追蹤與心得回顧
 │   └── week01_2025-07-04.md     # 第一週進度紀錄
