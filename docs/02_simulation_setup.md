@@ -43,11 +43,31 @@ sudo make -j12
 
 ```
 
-
-
 ## 1. 基本模擬架構
 
 ```text
 [ testbench.v ] → [ picorv32.v ] → [ firmware.elf / .hex ]
        ↓ trace                ↓ waveform
    showtrace.py           gtkwave
+
+```
+
+## 2. 測試方式說明
+| make target     | 功能                                        |
+| --------------- | ----------------------------------------- |
+| `make test`     | 編譯 testbench.v 與 firmware.hex，生成 VCD      |
+| `make test_ez`  | 使用 testbench\_ez.v，內建指令測試，不需 firmware.hex |
+| `make test_vcd` | 額外輸出 trace（需 `showtrace.py` 解碼）           |
+
+## 3. 工具鏈建置
+
+使用指令安裝 RISC-V GCC 工具鏈（可參考 README.md 的 build-tools 說明）
+安裝 Icarus Verilog / Verilator
+安裝 gtkwave, python3 showtrace.py
+
+## 4. 模擬常見錯誤與解法
+| 問題描述                     | 解法                                |
+| ------------------------ | ---------------------------------     |
+| `VVP error...`           | Icarus 版本過舊，需升級到 github 最新     |
+| `firmware.hex not found` | 忘記執行 `make firmware/firmware.hex`   |
+| Trace log 顯示錯誤指令     | 核心未設定 Compressed ISA 或其他擴展     |
