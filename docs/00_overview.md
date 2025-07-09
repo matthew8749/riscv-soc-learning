@@ -13,6 +13,17 @@
 | picosoc  | PicoRV32 的最小 SoC 實作（具 SPI Flash boot）              |
 | 模擬平台  | Icarus Verilog / Verilator + VCD / Trace                 |
 
+### 專案目錄與檔案介紹
+
+- `picorv32.v`：主核心檔案，包含多種變形模組（AXI、Wishbone、PCPI 等）
+- `Makefile`、`testbench.v`、`testbench_ez.v`：基本與簡化測試平台，可執行模擬測試
+- `firmware/`：測試用韌體與 IRQ/乘法協同處理測試程式
+- `tests/`：基本 RISC-V 指令測試
+- `dhrystone/`：Dhrystone 效能評估用測試
+- `picosoc/`：簡單 SoC 範例（SPI Flash）
+- `scripts/`：建構與合成支援腳本
+
+
 ## 3. 筆記架構與目標
 
 | 筆記檔案                  | 主題                                  |
