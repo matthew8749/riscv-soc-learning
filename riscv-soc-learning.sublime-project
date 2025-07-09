@@ -40,11 +40,16 @@
       "path": "./docs",
     },
     {
-      "name": "2-scripts",
+      "name": "2-Note",
+      "path": "./notes",
+      "font_size":13,
+    },
+    {
+      "name": "3-scripts",
       "path": "./scripts",
     },
     {
-      "name": "3-YosysHQ---picorv32",
+      "name": "4-YosysHQ---picorv32",
       "path": "./src/YosysHQ---picorv32/",
     }
   ],
