@@ -71,3 +71,8 @@ sudo make -j12
 | `VVP error...`           | Icarus 版本過舊，需升級到 github 最新     |
 | `firmware.hex not found` | 忘記執行 `make firmware/firmware.hex`   |
 | Trace log 顯示錯誤指令     | 核心未設定 Compressed ISA 或其他擴展     |
+
+- 官方有提供文字化的trace方式，執行：  
+```bash  
+python3 showtrace.py testbench.trace firmware/firmware.elf  
+```  

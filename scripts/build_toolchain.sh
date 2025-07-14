@@ -3,6 +3,8 @@ set -e
 
 NUM_JOBS=8
 
+
+# ubuntu 24.04 LTS 以上版本
 # === 安裝所需套件 ===
 echo "[1/5] Installing dependencies..."
 sudo apt update
@@ -20,7 +22,7 @@ cd $HOME/riscv-toolchain-build
 echo "[2/5] Cloning rv32imc toolchain..."
 git clone --recursive https://github.com/riscv/riscv-gnu-toolchain riscv-gnu-toolchain-rv32
 cd riscv-gnu-toolchain-rv32
-./configure --prefix=/opt/riscv32 --with-arch=rv32imc --with-abi=ilp32
+./configure --prefix=/opt/riscv32imc --with-arch=rv32imc --with-abi=ilp32
 echo "[3/5] Building rv32imc toolchain..."
 make -j$NUM_JOBS
 cd ..
