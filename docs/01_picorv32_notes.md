@@ -5,7 +5,7 @@
   - Instruction Decoder
   - Main State Machine
 
-- picorv32_regs
+- picorv32_regs                   //
 
 - picorv32_pcpi_mul               // A PCPI core that implements the MUL[H[SU|U]] instructions
 

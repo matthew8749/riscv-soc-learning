@@ -15,8 +15,11 @@ sudo apt-get install autoconf automake autotools-dev curl python3 libmpc-dev lib
      gawk build-essential bison flex texinfo gperf libtool patchutils bc zlib1g-dev libexpat-dev ninja-build
 
 # === 建立工作資料夾 ===
-mkdir -p $HOME/riscv-toolchain-build
-cd $HOME/riscv-toolchain-build
+sudo mkdir riscv-toolchain-build
+sudo chown yeda riscv-toolchain-build
+sudo chmod -R 777 riscv-toolchain-build
+cd /riscv-toolchain-build
+
 
 # === 安裝 rv32imc 工具鏈 (picorv32) ===
 echo "[2/5] Cloning rv32imc toolchain..."

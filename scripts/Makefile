@@ -12,7 +12,7 @@ QEMU_URL      := https://github.com/qemu/qemu
 
 
 
-.PHONY:help install install_toolchains install_qemu symlinks write_path clean uninstall check test test1
+.PHONY:help install install_toolchains install_qemu symlinks write_path clean uninstall check
 
 
 help: Makefile
@@ -34,6 +34,12 @@ all: install
 ## 安裝所有工具鏈與 QEMU
 install: install_toolchains install_qemu symlinks write_path
 	@echo "所有元件安裝完成"
+
+create_build_floder:
+	sudo mkdir /riscv-toolchain-build
+	sudo chown yeda /riscv-toolchain-build
+	sudo chmod -R 777 /riscv-toolchain-build
+	cd /riscv-toolchain-build
 
 install_toolchains:
 	mkdir -p $(INSTALL_DIR) $(WORK_DIR) $(LOG_DIR)
@@ -85,3 +91,6 @@ uninstall:
 	done
 	@echo "移除 PATH 設定（若存在）"
 	sed -i "\|$(PATH_LINE)|d" $(BASHRC)
+
+
+
